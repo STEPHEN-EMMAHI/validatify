@@ -14,14 +14,36 @@
   </head>
 
   <body class="text-base">
-    <label for="email">Email</label>
-    <input
-      class="border outline-none"
-      type="email"
-      name="email"
-      id="email"
-      placeholder="name@gmail.com"
-    />
+    <!-- email -->
+    <div class="email-group">
+      <label for="email">Email</label>
+      <input 
+       class="border outline-none block" 
+       type="email" 
+       name="email"
+       id="email"
+       placeholder="name@gmail.com"
+      />
+    </div>
+    <!-- password -->
+    <div class="password-group">
+      <label for="password">Password</label>
+      <div class="relative w-fit">
+        <input 
+         class="border" 
+         type="password" 
+         name="password" 
+         id="password" 
+         placeholder="********"
+        />
+        <button id="showHidePassword" type="button" class="absolute right-3 -translate-y-0.5">show</button>
+      </div>
+      <div id="password-rules" class="hidden">
+        <p id="char-long" class="text-red-500">From 8 to 20 characters long</p>
+        <p id="upper" class="text-red-500">At least one uppercase</p>
+        <p id="lower" class="text-red-500">At least one lowercase</p>
+      </div>
+    </div>
     <script type="module" src="./src/controller/main.js"></script>
   </body>
 </html>
