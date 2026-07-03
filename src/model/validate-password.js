@@ -21,15 +21,6 @@ export function showOrHidePassword() {
     }
 }
 
-/* Clear Password Rules Function */
-export function clearPasswordRules() {
-  const passwordRules = document.getElementById("password-rules");
-  
-  if (!passwordRules.classList.contains("hidden")) {
-    passwordRules.classList.add("hidden");
-  }
-}
-
 /* Validate Password Rules Function */
 export function validatePasswordRules() {
     const password = document.getElementById("password");
@@ -38,7 +29,8 @@ export function validatePasswordRules() {
     const lowerCase = document.getElementById("lower");
 
     // validate password length
-    if (password.value.length >= 8 && password.value.length <= 20) {
+    if (password.value.length >= 8 && password.value.length <= 20 
+        && /[A-Z]+/.test(password.value) && /[a-z]+/.test(password.value) ) {
         charactersLong.classList.add("hidden");
         password.classList.remove("border-red-500");
         password.classList.add("border-green-500");
