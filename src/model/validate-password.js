@@ -25,22 +25,17 @@ export function showOrHidePassword() {
 export function validatePasswordRules() {
     const password = document.getElementById("password");
     const charactersLong = document.getElementById("char-long");
-    const upperCase = document.getElementById("upper");
-    const lowerCase = document.getElementById("lower");
 
     // validate password length
-    if (password.value.length >= 8 && password.value.length <= 20 
-        && /[A-Z]+/.test(password.value) && /[a-z]+/.test(password.value) ) {
+    const passwordLengthValid = password.value.length >= 8 && password.value.length <= 20;
+
+    if (passwordLengthValid) {
         charactersLong.classList.add("hidden");
-        password.classList.remove("border-red-500");
-        password.classList.add("border-green-500");
     } else {
         charactersLong.classList.remove("hidden");
-        password.classList.remove("border-green-500");
-        password.classList.add("border-red-500");
     }
 
-    if (password.value.length >= 1 && password.value.length < 8) {
+    if (password.value.length > 0 && password.value.length < 8) {
         charactersLong.textContent = "At least 8 characters long";
     } else if (password.value.length > 20) {
         charactersLong.textContent = "At most 20 characters long";
@@ -49,16 +44,30 @@ export function validatePasswordRules() {
     }
 
     // validate uppercase letter
-    if (/[A-Z]+/.test(password.value)) {
+    const upperCase = document.getElementById("upper");
+    const hasUpperCase = /[A-Z]+/.test(password.value);
+
+    if (hasUpperCase) {
         upperCase.classList.add("hidden");
-    }else {
+    } else {
         upperCase.classList.remove("hidden");
     }
 
     // validate lowercase letter
-    if (/[a-z]+/.test(password.value)) {
+    const lowerCase = document.getElementById("lower");
+    const hasLowerCase = /[a-z]+/.test(password.value);
+    if (hasLowerCase) {
         lowerCase.classList.add("hidden");
     }else {
         lowerCase.classList.remove("hidden");
+    }
+
+    // validate UI
+    if (passwordLengthValid && hasUpperCase && hasLowerCase) {
+        password.classList.remove("border-red-500");
+        password.classList.add("border-green-500");
+    }else {
+        password.classList.remove("border-green-500");
+        password.classList.add("border-red-500");
     }
 }
