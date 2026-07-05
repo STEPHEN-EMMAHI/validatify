@@ -19,14 +19,14 @@ export function validateEmail() {
         checkPasswordAndEmail.classList.remove("hidden");
         password.classList.remove("border-green-500");
         password.classList.add("border-red-500");
-    } else {
+  } else {
         checkPasswordAndEmail.classList.add("hidden");
-        password.classList.remove("border-red-500");
-
-        if (password.value !== "") {
-          password.classList.add("border-green-500");
-        } else {
+        // Do not force a green border here — password border
+        // should be controlled by validatePasswordRules(). Only
+        // remove error styling when password is empty.
+        if (password.value === "") {
           password.classList.remove("border-red-500");
+          password.classList.remove("border-green-500");
         }
     } 
 }
