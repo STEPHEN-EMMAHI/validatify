@@ -56,18 +56,31 @@ export function validatePasswordRules() {
     // validate lowercase letter
     const lowerCase = document.getElementById("lower");
     const hasLowerCase = /[a-z]+/.test(password.value);
+
     if (hasLowerCase) {
         lowerCase.classList.add("hidden");
     }else {
         lowerCase.classList.remove("hidden");
     }
 
+    // check if password and email are the same
+    const email = document.getElementById('email');
+    const checkPasswordAndEmail = document.getElementById("samePasswordAndEmail");
+
+    if (password.value === email.value) {
+        checkPasswordAndEmail.classList.remove("hidden");
+    } else {
+        checkPasswordAndEmail.classList.add("hidden");
+    } 
+
     // validate UI
-    if (passwordLengthValid && hasUpperCase && hasLowerCase) {
+    if (passwordLengthValid && hasUpperCase && hasLowerCase && password.value !== email.value) {
         password.classList.remove("border-red-500");
         password.classList.add("border-green-500");
-    }else {
+    } else {
         password.classList.remove("border-green-500");
         password.classList.add("border-red-500");
     }
+
+    
 }

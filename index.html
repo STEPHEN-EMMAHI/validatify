@@ -40,13 +40,20 @@
           >
           <button id="showHidePasswordBtn" type="button" class="absolute right-3 -translate-y-0.5">show</button>
         </div>
-        <div id="password-rules" class="hidden">
-          <p id="char-long" class="text-red-500">From 8 to 20 characters long</p>
-          <p id="upper" class="text-red-500">At least one uppercase</p>
-          <p id="lower" class="text-red-500">At least one lowercase</p>
+        <div id="password-rules" class="hidden text-red-500">
+          <p id="char-long">From 8 to 20 characters long</p>
+          <p id="upper">At least one uppercase</p>
+          <p id="lower">At least one lowercase</p>
+          <p id="samePasswordAndEmail" class="hidden">Password cannot be same as email</p>
         </div>
       </div>
-      <button type="submit">Submit</button>
+      <!-- checkbox -->
+      <input type="checkbox" id="checkbox" name="checkbox">
+      <label for="checkbox">I agree to the 
+        <a href="#" class="text-violet-500">Terms and Conditions.</a>
+      </label>
+      <!-- submit button -->
+      <button id="submitBtn" class="block border" type="submit" disabled>Submit</button>
     </form>
     <script type="module" src="./src/controller/main.js"></script>
   </body>
