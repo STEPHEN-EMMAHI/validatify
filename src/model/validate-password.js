@@ -76,9 +76,7 @@ export function validatePasswordRules() {
     // validate UI
     if (passwordLengthValid && hasUpperCase && hasLowerCase && password.value !== email.value) {
         password.classList.remove("border-red-500");
-        password.classList.add("border-green-500");
     } else {
-        password.classList.remove("border-green-500");
         password.classList.add("border-red-500");
     }
 

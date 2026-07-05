@@ -5,9 +5,7 @@ export function validateEmail() {
 
   if (emailRegex) {
     email.classList.remove("border-red-500");
-    email.classList.add("border-green-500");
-  }else {
-    email.classList.remove("border-green-500");
+  } else {
     email.classList.add("border-red-500");
   }
 
@@ -17,16 +15,9 @@ export function validateEmail() {
 
   if (password.value === email.value) {
         checkPasswordAndEmail.classList.remove("hidden");
-        password.classList.remove("border-green-500");
         password.classList.add("border-red-500");
   } else {
         checkPasswordAndEmail.classList.add("hidden");
-        // Do not force a green border here — password border
-        // should be controlled by validatePasswordRules(). Only
-        // remove error styling when password is empty.
-        if (password.value === "") {
-          password.classList.remove("border-red-500");
-          password.classList.remove("border-green-500");
-        }
+        password.classList.remove("border-red-500");
     } 
 }
