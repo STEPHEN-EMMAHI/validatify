@@ -5,7 +5,6 @@ import { submitBtn } from "../model/submit-btn.js";
 const email = document.getElementById("email");
 email.addEventListener("input", () => {
   validateEmail();
-  validatePasswordRules();
   submitBtn();
 });
 
