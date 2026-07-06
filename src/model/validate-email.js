@@ -13,7 +13,7 @@ export function validateEmail() {
   const checkPasswordAndEmail = document.getElementById("samePasswordAndEmail");
   const password = document.getElementById("password");
 
-  if (password.value === email.value) {
+  if (email.value !== "" && email.value === password.value) {
         checkPasswordAndEmail.classList.remove("hidden");
         password.classList.add("border-red-500");
   } else {

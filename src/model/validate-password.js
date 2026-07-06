@@ -79,6 +79,31 @@ export function validatePasswordRules() {
     } else {
         password.classList.add("border-red-500");
     }
+}
 
-    
+/* Validate Confirm Password */ 
+export function validateConfirmPassword () {
+    // check if password and confirm password are the same
+    const password = document.getElementById("password");
+    const confirmPassword = document.getElementById("confirmPassword");
+    const confirmPasswordWarning = document.getElementById("confirmPasswordWarning");
+
+    if (confirmPassword.value !== "" && password.value !== confirmPassword.value) {
+        confirmPasswordWarning.classList.remove("hidden");
+    } else {
+        confirmPasswordWarning.classList.add("hidden");
+    }
+}
+
+export function showOrHideConfirmPassword() {
+    const confirmPassword = document.getElementById("confirmPassword");
+    const showOrHideConfirmPasswordButton = document.getElementById("showOrHideConfirmPasswordBtn");
+
+    if (confirmPassword.type === "password") {
+        confirmPassword.type = "text";
+        showOrHideConfirmPasswordButton.textContent = "hide";
+    } else {
+        confirmPassword.type = "password";
+        showOrHideConfirmPasswordButton.textContent = "show";
+    }
 }

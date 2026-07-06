@@ -15,12 +15,18 @@ export function submitBtn() {
     
     const submitButton = document.getElementById("submitBtn");
 
-    if (emailRegex && passwordLengthValid && hasUpperCase && hasLowerCase && checkBox.checked && password.value !== email.value) {
+    const confirmPassword = document.getElementById("confirmPassword");
+    const validateBothPasswordFields = password.value === confirmPassword.value
+
+    if (emailRegex && passwordLengthValid && hasUpperCase && hasLowerCase && checkBox.checked && password.value !== email.value && validateBothPasswordFields) {
         submitButton.disabled = false;
-        submitButton.classList.add("bg-green-500", "text-white");
+        submitButton.classList.remove("bg-red-500");
+        submitButton.classList.add("bg-green-500");
     } else {
         submitButton.disabled = true;
-        submitButton.classList.remove("bg-green-500", "text-white");
+        submitButton.classList.remove("bg-green-500");
+        submitButton.classList.add("bg-red-500", "text-white");
+        submitButton.classList.add("lg:disabled:cursor-not-allowed");
     }
 
 }
