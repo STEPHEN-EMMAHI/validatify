@@ -17,7 +17,7 @@
     <div class="h-screen flex flex-col justify-center md:items-center">
       <!-- HEADER -->
       <header class="w-full text-center">
-        <h1 class="text-4xl font-bold">Create Account</h1>
+        <h1 class="text-2xl font-bold">Create Account</h1>
         <p class="text-sm">Sign up to access all features and get started</p>
       </header>
 
@@ -25,7 +25,7 @@
       <main class="mx-3 mt-4 ">
         <form action="https://stephen-emmahi-nartey/bin" method="post">
           <!-- email -->
-          <div class="email-group text-xl mb-2">
+          <div class="email-group text-sm mb-2">
             <label for="email" class="mb-2 block">Email</label>
             <input 
              class="border rounded-lg outline-none block p-2 w-full" 
@@ -36,7 +36,7 @@
             >
           </div>
           <!-- password -->
-          <div class="password-group text-xl mb-2">
+          <div class="password-group text-sm mb-2">
             <label for="password" class="mb-2 block">Password</label>
             <div class="relative">
               <input 
@@ -47,7 +47,7 @@
                placeholder="********"
                autocomplete="new-password"
               >
-              <button id="showHidePasswordBtn" type="button" class="absolute text-sm right-3 top-3.5 -translate-y-0.5">show</button>
+              <button id="showHidePasswordBtn" type="button" class="absolute text-sm right-3 top-2.5 -translate-y-0.5">show</button>
             </div>
             <div id="password-rules" class="hidden text-red-500">
               <p id="char-long">From 8 to 20 characters long</p>
@@ -66,13 +66,13 @@
                placeholder="********"
                autocomplete="new-password"
               >
-              <button id="showOrHideConfirmPasswordBtn" type="button" class="absolute text-sm right-3 top-3.5 -translate-y-0.5">show</button>
+              <button id="showOrHideConfirmPasswordBtn" type="button" class="absolute text-sm right-3 top-2.5 -translate-y-0.5">show</button>
             </div>
             <p id="confirmPasswordWarning" class="text-red-500 mt-1 hidden">Password mismatch</p>
           </div>
           <!-- checkbox -->
           <input type="checkbox" id="checkbox" name="checkbox" class="size-4 mt-3">
-          <label for="checkbox" class="text-xl">I agree to the 
+          <label for="checkbox" class="text-sm">I agree to the 
             <a href="#" class="text-violet-500">Terms and Conditions.</a>
           </label>
           <!-- submit button -->
