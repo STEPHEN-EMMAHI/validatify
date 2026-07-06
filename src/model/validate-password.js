@@ -82,7 +82,7 @@ export function validatePasswordRules() {
 }
 
 /* Validate Confirm Password */ 
-export function validateConfirmPassword () {
+export function validateConfirmPassword() {
     // check if password and confirm password are the same
     const password = document.getElementById("password");
     const confirmPassword = document.getElementById("confirmPassword");
@@ -90,11 +90,14 @@ export function validateConfirmPassword () {
 
     if (confirmPassword.value !== "" && password.value !== confirmPassword.value) {
         confirmPasswordWarning.classList.remove("hidden");
+        confirmPassword.classList.add("border-red-500");
     } else {
         confirmPasswordWarning.classList.add("hidden");
+        confirmPassword.classList.remove("border-red-500");
     }
 }
 
+/* Show Or Hide Confirm Password */
 export function showOrHideConfirmPassword() {
     const confirmPassword = document.getElementById("confirmPassword");
     const showOrHideConfirmPasswordButton = document.getElementById("showOrHideConfirmPasswordBtn");
