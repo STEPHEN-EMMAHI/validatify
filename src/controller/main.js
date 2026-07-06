@@ -16,6 +16,7 @@ showHidePassword.addEventListener("click", showOrHidePassword);
 
 password.addEventListener("input", () => {
   validatePasswordRules();
+  validateConfirmPassword();
   submitBtn();
 });
 
